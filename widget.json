@@ -1,16 +1,16 @@
 {
-  "name": "widget-sample",
-  "author": "Vanessa",
-  "url": "https://github.com/siyuan-note/widget-sample",
-  "version": "0.0.3",
+  "name": "moredraw-widget-siyuan",
+  "author": "Younluve",
+  "url": "https://github.com/webceoboy/moredraw-widget-siyuan",
+  "version": "0.0.1",
   "minAppVersion": "2.8.8",
   "displayName": {
-    "default": "Widget Sample",
-    "zh_CN": "挂件示例"
+    "default": "MoreDraw",
+    "zh_CN": "MoreDraw 白板"
   },
   "description": {
-    "default": "This is a widget sample",
-    "zh_CN": "这是一个挂件示例"
+    "default": "MoreDraw widget for siyuan",
+    "zh_CN": "MoreDraw挂件，流程图、思维导图、便签、待办、图表等10+节点类型，任意连接，无限画布，多功能白板。"
   },
   "readme": {
     "default": "README.md",
@@ -21,10 +21,17 @@
     "patreon": "",
     "github": "",
     "custom": [
-      "https://ld246.com/sponsor"
+
     ]
   },
   "keywords": [
-    "sample", "示例"
+    "mind map",
+    "思维导图",
+    "flowchart",
+    "流程图",
+    "whiteboard",
+    "白板",
+    "AI",
+    "画图"
   ]
 }

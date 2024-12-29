@@ -3,57 +3,45 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Hello, Bootstrap Table!</title>
+    <title>MoreDraw</title>
 
-    <link rel="stylesheet" href="static/bootstrap.min.css">
-    <link rel="stylesheet" href="static/bootstrap-table.min.css">
 </head>
-<body>
-<table id="table">
-</table>
-
-<script src="static/jquery.min.js"></script>
-<script src="static/popper.min.js"></script>
-<script src="static/bootstrap.min.js"></script>
-<script src="static/bootstrap-table.min.js"></script>
+<body style="padding: 0;margin: 0;">
 
 <script>
-    $.ajax({
-        method: "POST",
-        url: "http://127.0.0.1:6806/api/query/sql",
-        data: JSON.stringify({
-            "stmt": "SELECT * FROM blocks WHERE content LIKE'%content%' LIMIT 7"
-        })
-    }).done(result => {
-        console.log(result);
+    const node = self.frameElement.parentElement.parentElement;
+    const id = node.getAttribute('data-node-id');
+    let path = node.getAttribute('data-path');
+    path = path ? path : 'get-started/siyuan';
 
-        $('#table').bootstrapTable({
-            sortable: true,
-            columns: [{
-                field: 'id',
-                title: 'ID',
-                width: "100",
-            }, {
-                field: 'content',
-                title: 'Content',
-                width: "100",
-            }, {
-                field: 'type',
-                title: 'Type',
-                width: "20",
-            }, {
-                field: 'created',
-                title: 'Created',
-                width: "100",
-            }, {
-                field: 'updated',
-                title: 'Updated',
-                width: "100",
-            }
-            ],
-            data: result.data,
-        });
-    })
+    window.addEventListener("message", (event) => {
+        console.log(event);
+        if (event.data && event.data.action == 'routeAfterEach') {
+            fetch('/api/attr/setBlockAttrs', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "id": id,
+                    "attrs": {
+                        "data-path": event.data.data,
+                    }
+                })
+            })
+        }
+    });
+    window.onload = function () {
+        const url = new URL(('https://moredraw.com/app/' + path).replaceAll('//', '/'));
+        url.searchParams.append('utm_source', 'siyuan');
+        const iframe = document.createElement('iframe');
+        iframe.frameBorder = '0';
+        iframe.style.width = '100vw';
+        iframe.style.height = '100vh';
+        iframe.src = url.toString();
+        document.body.appendChild(iframe);
+    }
 </script>
 </body>
 </html>
