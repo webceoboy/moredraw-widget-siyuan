@@ -5,6 +5,9 @@ MoreDraw - 打造你的专属无限画布白板，集思维导图、流程图、
 MoreDraw现已集成AI功能！🤖✨ 只需输入关键词或描述，AI即可智能生成流程图、思维导图等，助你快速搭建创意框架，省时又高效！
 无论是灵感捕捉还是逻辑梳理，MoreDraw都让创作更简单、更智能！立即体验，释放你的无限潜能！🎨💡
 
+# 截图
+
+![截图](https://raw.githubusercontent.com/webceoboy/moredraw-widget-siyuan/refs/heads/main/preview.png)
 # 使用
 
 - 1、输入 /
