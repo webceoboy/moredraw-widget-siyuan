@@ -13,7 +13,7 @@ and unleash your unlimited potential! 🎨💡
 
 # Screenshot
 
-![截图](https://raw.githubusercontent.com/webceoboy/moredraw-widget-siyuan/refs/heads/main/static/screenshot1.png)
+![截图](https://github.com/webceoboy/moredraw-widget-siyuan/blob/main/static/screenshot1.png)
 
 # Usage
 
