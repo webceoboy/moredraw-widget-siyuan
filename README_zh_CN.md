@@ -7,7 +7,7 @@ MoreDraw现已集成AI功能！🤖✨ 只需输入关键词或描述，AI即可
 
 # 截图
 
-![截图](https://raw.githubusercontent.com/webceoboy/moredraw-widget-siyuan/refs/heads/main/preview.png)
+![截图](https://raw.githubusercontent.com/webceoboy/moredraw-widget-siyuan/refs/heads/main/static/screenshot.png)
 # 使用
 
 - 1、输入 /

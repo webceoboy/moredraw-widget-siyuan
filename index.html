@@ -32,14 +32,46 @@
             })
         }
     });
+
     window.onload = function () {
         const url = new URL(('https://moredraw.com/app/' + path).replaceAll('//', '/'));
-        url.searchParams.append('utm_source', 'siyuan');
+        url.searchParams.set('utm_source', 'siyuan');
         const iframe = document.createElement('iframe');
         iframe.frameBorder = '0';
         iframe.style.width = '100vw';
         iframe.style.height = '100vh';
         iframe.src = url.toString();
+
+        function hideToolBar() {
+            iframe.contentWindow.postMessage({action: 'hideToolbar'}, '*')
+        }
+
+        node.addEventListener('mouseenter', () => {
+            iframe.contentWindow.postMessage({action: 'showToolbar'}, '*')
+        });
+        node.addEventListener('mouseleave', () => {
+            hideToolBar()
+        });
+        node.parentElement.addEventListener('click', (event) => {
+            const clickedElement = event.target;
+            if (!node.contains(clickedElement)) {
+                // 如果点击的元素不在目标 div 内部
+                console.debug('点击', clickedElement)
+                hideToolBar()
+            } else {
+                console.log('点击了目标 div');
+            }
+        });
+        node.parentElement.addEventListener('touchstart', (event) => {
+            const clickedElement = event.target;
+            if (!node.contains(clickedElement)) {
+                // 如果点击的元素不在目标 div 内部
+                console.debug('点击', clickedElement)
+                hideToolBar()
+            } else {
+                console.log('点击了目标 div');
+            }
+        });
         document.body.appendChild(iframe);
     }
 </script>
